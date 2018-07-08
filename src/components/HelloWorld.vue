@@ -8,7 +8,7 @@
     <ul>
       <li v-for="todo in todos" v-bind:key="todo.contents">
         <input type="checkbox" name="status" id="status" v-model="todo.status">
-        {{todo.contents}}
+        <span :class="{done: todo.status}">{{todo.contents}}</span>
       </li>
     </ul>
   
@@ -59,5 +59,9 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.done {
+  text-decoration: line-through;
 }
 </style>
