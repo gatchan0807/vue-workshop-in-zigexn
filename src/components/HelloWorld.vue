@@ -1,12 +1,18 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h2>{{ randomNumber }}</h2>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  computed: {
+    randomNumber: function() {
+      return Math.floor( Math.random() * 100 ) // 0〜100のランダムな値を返す
+    }
+  },
   data () {
     return {
       msg: 'このアプリは最高のアプリさ！'
