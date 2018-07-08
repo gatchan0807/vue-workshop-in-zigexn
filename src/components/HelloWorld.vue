@@ -7,6 +7,7 @@
   
     <ul>
       <li v-for="todo in todos" v-bind:key="todo.contents">
+        <input type="checkbox" name="status" id="status" v-model="todo.status">
         {{todo.contents}}
       </li>
     </ul>
