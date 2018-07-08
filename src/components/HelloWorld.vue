@@ -2,6 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>{{ randomNumber }}</h2>
+    <h2 v-if="randomNumber >= 50">50以上やで</h2>
+    <h2 v-if="randomNumber < 50">50より小さいで</h2>
   </div>
 </template>
 
