@@ -4,6 +4,13 @@
     <h2>{{ randomNumber }}</h2>
     <h2 v-if="randomNumber >= 50">50以上やで</h2>
     <h2 v-if="randomNumber < 50">50より小さいで</h2>
+  
+    <ul>
+      <li v-for="todo in todos" v-bind:key="todo.contents">
+        {{todo.contents}}
+      </li>
+    </ul>
+  
   </div>
 </template>
 
