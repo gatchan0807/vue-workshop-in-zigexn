@@ -17,7 +17,18 @@ export default {
   },
   data () {
     return {
-      msg: 'このアプリは最高のアプリさ！'
+      msg: 'このアプリは最高のアプリさ！',
+      todos: [
+        {
+          contents: "Todo 1",
+        },
+        {
+          contents: "Todo 2",
+        },
+        {
+          contents: "Todo 3",
+        },
+      ],
     }
   }
 }
@@ -33,7 +44,6 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
   margin: 0 10px;
 }
 a {
