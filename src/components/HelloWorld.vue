@@ -34,20 +34,7 @@ export default {
 		return {
 			msg: 'このアプリは最高のアプリさ！',
 			input: '',
-			todos: [
-				{
-					contents: 'Todo 1',
-					status: false,
-				},
-				{
-					contents: 'Todo 2',
-					status: false,
-				},
-				{
-					contents: 'Todo 3',
-					status: false,
-				},
-			],
+			todos: [],
 		}
 	},
 	methods: {
