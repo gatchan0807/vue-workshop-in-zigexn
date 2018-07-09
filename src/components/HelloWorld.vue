@@ -50,6 +50,10 @@ export default {
   },
   methods: {
     add: function () {
+      if (this.input.length === 0) {
+        return
+      }
+
       let newTodo = {
         contents: this.input,
         status:   false,
