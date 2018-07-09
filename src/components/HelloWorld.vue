@@ -6,7 +6,7 @@
     <h2 v-if="randomNumber < 50">50より小さいで</h2>
 
     <form onsubmit="return false;">
-      <input type="text">
+      <input type="text" v-model="input">
       <button type="submit">追加</button>
     </form>
 
@@ -31,6 +31,7 @@ export default {
   data () {
     return {
       msg: 'このアプリは最高のアプリさ！',
+      input: '',
       todos: [
         {
           contents: "Todo 1",
