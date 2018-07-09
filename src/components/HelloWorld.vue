@@ -4,14 +4,14 @@
     <h2>{{ randomNumber }}</h2>
     <h2 v-if="randomNumber >= 50">50以上やで</h2>
     <h2 v-if="randomNumber < 50">50より小さいで</h2>
-  
+
     <ul>
       <li v-for="todo in todos" v-bind:key="todo.contents">
         <input type="checkbox" name="status" id="status" v-model="todo.status">
-        <span :class="{done: todo.status}">{{todo.contents}}</span>
+        <label :class="{done: todo.status}" for="status">{{todo.contents}}</label>
       </li>
     </ul>
-  
+
   </div>
 </template>
 
