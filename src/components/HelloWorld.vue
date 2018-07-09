@@ -22,73 +22,74 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  computed: {
-    randomNumber: function() {
-      return Math.floor( Math.random() * 100 ) // 0〜100のランダムな値を返す
-    }
-  },
-  data () {
-    return {
-      msg: 'このアプリは最高のアプリさ！',
-      input: '',
-      todos: [
-        {
-          contents: "Todo 1",
-          status: false,
-        },
-        {
-          contents: "Todo 2",
-          status: false,
-        },
-        {
-          contents: "Todo 3",
-          status: false,
-        },
-      ],
-    }
-  },
-  methods: {
-    add: function () {
-      if (this.input.length === 0) {
-        return
-      }
+	name: 'HelloWorld',
+	computed: {
+		randomNumber: function() {
+			return Math.floor(Math.random() * 100) // 0〜100のランダムな値を返す
+		},
+	},
+	data() {
+		return {
+			msg: 'このアプリは最高のアプリさ！',
+			input: '',
+			todos: [
+				{
+					contents: 'Todo 1',
+					status: false,
+				},
+				{
+					contents: 'Todo 2',
+					status: false,
+				},
+				{
+					contents: 'Todo 3',
+					status: false,
+				},
+			],
+		}
+	},
+	methods: {
+		add: function() {
+			if (this.input.length === 0) {
+				return
+			}
 
-      let newTodo = {
-        contents: this.input,
-        status:   false,
-      }
+			let newTodo = {
+				contents: this.input,
+				status: false,
+			}
 
-      this.todos.push(newTodo)
-      this.input = ''
-    },
-  },
+			this.todos.push(newTodo)
+			this.input = ''
+		},
+	},
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+h1,
+h2 {
+	font-weight: normal;
 }
 ul {
-  list-style-type: none;
-  padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 li {
-  margin: 0 10px;
+	margin: 0 10px;
 }
 a {
-  color: #42b983;
+	color: #42b983;
 }
 
 .done {
-  text-decoration: line-through;
+	text-decoration: line-through;
 }
 
 button {
-  background-color: #42b983;
-  color: #fff;
-  border: 0;
+	background-color: #42b983;
+	color: #fff;
+	border: 0;
 }
 </style>
