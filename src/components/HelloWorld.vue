@@ -5,7 +5,7 @@
     <h2 v-if="randomNumber >= 50">50以上やで</h2>
     <h2 v-if="randomNumber < 50">50より小さいで</h2>
 
-    <form onsubmit="return false;">
+    <form onsubmit="return false;" @submit="add">
       <input type="text" v-model="input">
       <button type="submit">追加</button>
     </form>
@@ -47,7 +47,18 @@ export default {
         },
       ],
     }
-  }
+  },
+  methods: {
+    add: function () {
+      let newTodo = {
+        contents: this.input,
+        status:   false,
+      }
+
+      this.todos.push(newTodo)
+      this.input = ''
+    },
+  },
 }
 </script>
 
