@@ -21,10 +21,18 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
 
 export default {
 	name: 'HelloWorld',
+	mounted: function() {
+		const BASE_URL = 'http://localhost:3000'
+		const url = BASE_URL + '/todos'
+
+		axios.get(url).then(response => {
+			this.todos = response.data
+		})
+	},
 	computed: {
 		randomNumber: function() {
 			return Math.floor(Math.random() * 100) // 0〜100のランダムな値を返す
