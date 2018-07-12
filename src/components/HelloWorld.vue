@@ -55,9 +55,15 @@ export default {
 				status: false,
 			}
 
-			axios.post(url, newTodo).then(response => {
-				console.log(response)
-			})
+			axios
+				.post(url, newTodo)
+				.then(response => {
+					alert('登録完了しました')
+				})
+				.catch(error => {
+					alert('登録に失敗しました')
+					console.error(error)
+				})
 
 			this.todos.push(newTodo)
 
