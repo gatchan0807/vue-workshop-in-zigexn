@@ -12,7 +12,7 @@
 
     <ul>
       <li v-for="todo in todos" v-bind:key="todo.contents">
-        <input type="checkbox" name="status" id="status" v-model="todo.status">
+        <input type="checkbox" name="status" id="status" v-model="todo.status" @click="toggle(todo.id)">
         <label :class="{done: todo.status}" for="status">{{todo.contents}}</label>
       </li>
     </ul>
@@ -57,11 +57,20 @@ export default {
 
 			axios.post(url, newTodo).then(response => {
 				console.log(response)
-      })
-      
+			})
+
 			this.todos.push(newTodo)
 
 			this.input = ''
+		},
+		toggle: function(_id) {
+			let todo = this.todos.find(todo => {
+				return todo.id === _id
+			})
+
+			todo.status = !todo.status
+
+			axios.put(url + '/' + _id, todo)
 		},
 	},
 }
