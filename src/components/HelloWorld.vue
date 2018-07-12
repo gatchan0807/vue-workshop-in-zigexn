@@ -22,13 +22,12 @@
 
 <script>
 import axios from 'axios'
+const BASE_URL = 'http://localhost:3000'
+const url = BASE_URL + '/todos'
 
 export default {
 	name: 'HelloWorld',
 	mounted: function() {
-		const BASE_URL = 'http://localhost:3000'
-		const url = BASE_URL + '/todos'
-
 		axios.get(url).then(response => {
 			this.todos = response.data
 		})
@@ -56,7 +55,12 @@ export default {
 				status: false,
 			}
 
+			axios.post(url, newTodo).then(response => {
+				console.log(response)
+      })
+      
 			this.todos.push(newTodo)
+
 			this.input = ''
 		},
 	},
